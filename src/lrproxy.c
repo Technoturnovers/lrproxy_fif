@@ -1131,7 +1131,7 @@ void retro_get_system_info(struct retro_system_info* info) {
 
     s_get_system_info(info);
     info->library_version = "1.0";
-    info->library_name = "libretro_fif";
+    info->library_name = "fif_libretro";
     info->valid_extensions = "rom";
     fprintf(stderr, TAG "retro_get_system_info(%p)\n", info);
 
@@ -1148,11 +1148,8 @@ void retro_get_system_av_info(struct retro_system_av_info* info) {
     init();
 
     s_get_system_av_info(info);
-    info->geometry.aspect_ratio = 0.75;
-    info->geometry.base_width = 240;
+    info->geometry.base_width = 428;
     info->geometry.base_height = 320;
-    info->geometry.max_width=240;
-    info->geometry.max_height=320;
     fprintf(stderr, TAG "retro_get_system_av_info(%p)\n", info);
 
 #ifndef QUIET
@@ -1227,7 +1224,7 @@ void retro_run(void) {
     init();
 
     s_run();
-    fprintf(stderr, TAG "retro_run()\n");
+//    fprintf(stderr, TAG "retro_run()\n");
 }
 
 size_t retro_serialize_size(void) {
